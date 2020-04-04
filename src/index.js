@@ -1,3 +1,4 @@
+const path = require('path');
 const { app, BrowserWindow, session } = require('electron');
 
 const SMART_TV_UA = 'Mozilla/5.0 (SMART-TV; Linux; Tizen 5.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/5.0 NativeTVAds Safari/538.1';
@@ -11,6 +12,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1024,
     height: 576,
+    icon: path.resolve('./assets/icon.png')
   });
 
   mainWindow.loadURL('https://www.youtube.com/tv');
