@@ -1,24 +1,23 @@
 const path = require('path');
 const { app, BrowserWindow, session } = require('electron');
 
-const SMART_TV_UA = 'Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.2.1 Chr0me/38.0.2125.122 Safari/537.36 LG Browser/8.00.00(LGE; 60UH6550-UB; 03.00.15; 1; DTV_W16N); webOS.TV-2016; LG NetCast.TV-2013 Compatible (LGE, 60UH6550-UB, wireless)';
+const SMART_TV_UA = 'iTunes-AppleTV/4.1';
 
-
-if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
+if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 1024,
-    height: 576,
+    width: 1280,
+    height: 740,
     icon: path.resolve('./assets/icon.png')
   });
 
   mainWindow.loadURL('https://www.youtube.com/tv');
 
   const filter = {
-    urls: ['*://*.youtube.com/tv*']
+    urls: ['*://*.youtube.com/*']
   }
 
   session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
