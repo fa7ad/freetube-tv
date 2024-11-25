@@ -1,54 +1,66 @@
-const path = require('path');
-const { app, BrowserWindow, session } = require('electron');
+const path = require("path");
+const { app, BrowserWindow, session } = require("electron");
 
-const SMART_TV_UA = 'iTunes-AppleTV/4.1';
+const SMART_TV_UA =
+  "Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)";
 
-if (require('electron-squirrel-startup')) {
+if (require("electron-squirrel-startup")) {
   app.quit();
 }
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 740,
-    icon: path.resolve('./assets/icon.png')
+    width: 1920,
+    height: 1100,
+    icon: path.resolve("./assets/icon.png"),
   });
 
-  mainWindow.loadURL('https://www.youtube.com/tv');
+  mainWindow.loadURL(
+    "https://www.youtube.com/tv#/?env_forceFullAnimation=true",
+  );
 
   const filter = {
-    urls: ['*://*.youtube.com/*']
-  }
+    urls: ["*://*.youtube.com/*"],
+  };
 
-  session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
-    details.requestHeaders['User-Agent'] = SMART_TV_UA;
-    callback({ requestHeaders: details.requestHeaders })
-  })
+  session.defaultSession.webRequest.onBeforeSendHeaders(
+    filter,
+    (details, callback) => {
+      details.requestHeaders["User-Agent"] = SMART_TV_UA;
+      callback({ requestHeaders: details.requestHeaders });
+    },
+  );
 
   // mainWindow.webContents.openDevTools();
-  mainWindow.webContents.executeJavaScript(`
-  for (let event_name of ["visibilitychange", "webkitvisibilitychange", "blur"]) {
+  mainWindow.webContents.executeJavaScript(
+    `
+  for (let event_name of ["visibilitychange", "webkitvisibilitychange", "blur", "pagehide"]) {
     window.addEventListener(event_name, function(event) {
       event.stopImmediatePropagation();
     }, true);
-  }`, true, _ => {
-    console.log('Enjoy FreeTube TV')
-  })
+  }`,
+    true,
+    (_) => {
+      console.log("Enjoy FreeTube TV");
+    },
+  );
 };
 
 app.allowRendererProcessReuse = true;
 app.userAgentFallback = SMART_TV_UA;
 
-app.on('ready', createWindow);
+app.whenReady().then(() => {
+  createWindow();
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+  app.on("activate", () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    }
+  });
 });
 
-app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
   }
 });

@@ -17,49 +17,18 @@
     "email": "8bit.demoncoder@gmail.com"
   },
   "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {
-        "icon": "./assets/icon"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-wix",
-          "config": {
-            "language": 1033,
-            "manufacturer": "Some Dude on GitHub"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-dmg",
-          "config": {
-            "background": "./assets/dmg-background.png",
-            "format": "ULFO"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-snap",
-          "config": {
-            "features": {
-              "audio": true,
-              "mpris": "com.fa7ad.freetubetv.mpris",
-              "webgl": true
-            },
-            "summary": "Free YTTV Emulator"
-          }
-        }
-      ]
-    }
-  },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.1"
   },
   "devDependencies": {
-    "@electron-forge/cli": "7.2.0",
-    "@electron-forge/maker-dmg": "^7.2.0",
-    "@electron-forge/maker-snap": "^7.2.0",
-    "@electron-forge/maker-wix": "^7.2.0",
-    "electron": "28.1.0"
+    "@electron-forge/cli": "^7.5.0",
+    "@electron-forge/maker-dmg": "^7.5.0",
+    "@electron-forge/maker-snap": "^7.5.0",
+    "@electron-forge/maker-squirrel": "^7.5.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.5.0",
+    "@electron-forge/plugin-fuses": "^7.5.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "33.2.0"
   },
   "packageManager": "yarn@4.0.2"
 }
