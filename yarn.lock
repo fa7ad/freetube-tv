@@ -666,12 +666,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.9.0":
-  version: 20.17.7
-  resolution: "@types/node@npm:20.17.7"
+"@types/node@npm:^22.7.7":
+  version: 22.18.0
+  resolution: "@types/node@npm:22.18.0"
   dependencies:
-    undici-types: "npm:~6.19.2"
-  checksum: e1fbc69ed34515da8a8a5cf4427e473f9c378f4cfe291f20635dda10a51a9854c687f5ab91eafdcbec2a0d52a1590e53ec6d49e53c1bc0e35ddde4f159246fcd
+    undici-types: "npm:~6.21.0"
+  checksum: 02cce4493eee8408e66e76fcad164f33c0600ed0854ad08e5519a76a06402da5b589b278cf71bc975c9e014f2668bdf758bc3be7fed63bdbfd0900495372797c
   languageName: node
   linkType: hard
 
@@ -1437,16 +1437,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:33.2.0":
-  version: 33.2.0
-  resolution: "electron@npm:33.2.0"
+"electron@npm:35.7.5":
+  version: 35.7.5
+  resolution: "electron@npm:35.7.5"
   dependencies:
     "@electron/get": "npm:^2.0.0"
-    "@types/node": "npm:^20.9.0"
+    "@types/node": "npm:^22.7.7"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: ad013bcc4fe65f6e0f40b77387452966347d4fb54acc8d8d7b0310244f73511a7ac87e03e1097970f83b94bcafc44e0b98a4c603daa9c95e11931d7c020ff155
+  checksum: 2c331e438b655b25a8b49ce038878cdc61a42481fcdf464ecb5648585a2c83f1edc5d8e0a8de582713f8e3dc8a3b35aaa136735ad68f8009ee2369f3b2e79c15
   languageName: node
   linkType: hard
 
@@ -1748,7 +1748,7 @@ __metadata:
     "@electron-forge/plugin-auto-unpack-natives": "npm:^7.5.0"
     "@electron-forge/plugin-fuses": "npm:^7.5.0"
     "@electron/fuses": "npm:^1.8.0"
-    electron: "npm:33.2.0"
+    electron: "npm:35.7.5"
     electron-squirrel-startup: "npm:^1.0.1"
   languageName: unknown
   linkType: soft
@@ -4116,10 +4116,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.19.2, undici-types@npm:~6.19.8":
+"undici-types@npm:~6.19.8":
   version: 6.19.8
   resolution: "undici-types@npm:6.19.8"
   checksum: 078afa5990fba110f6824823ace86073b4638f1d5112ee26e790155f481f2a868cc3e0615505b6f4282bdf74a3d8caad715fd809e870c2bb0704e3ea6082f344
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 
