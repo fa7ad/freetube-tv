@@ -1437,16 +1437,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:35.7.5":
-  version: 35.7.5
-  resolution: "electron@npm:35.7.5"
+"electron@npm:39.8.4":
+  version: 39.8.4
+  resolution: "electron@npm:39.8.4"
   dependencies:
     "@electron/get": "npm:^2.0.0"
     "@types/node": "npm:^22.7.7"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 2c331e438b655b25a8b49ce038878cdc61a42481fcdf464ecb5648585a2c83f1edc5d8e0a8de582713f8e3dc8a3b35aaa136735ad68f8009ee2369f3b2e79c15
+  checksum: 851ca2646fd9177daf0ec9f238ab668f8761644f7f5b4ce6836ee3b697920b4ac6dfd608f5c3ae747277d601500a2978d6683abfbe2f3203759b52b293df662e
   languageName: node
   linkType: hard
 
@@ -1748,7 +1748,7 @@ __metadata:
     "@electron-forge/plugin-auto-unpack-natives": "npm:^7.5.0"
     "@electron-forge/plugin-fuses": "npm:^7.5.0"
     "@electron/fuses": "npm:^1.8.0"
-    electron: "npm:35.7.5"
+    electron: "npm:39.8.4"
     electron-squirrel-startup: "npm:^1.0.1"
   languageName: unknown
   linkType: soft
